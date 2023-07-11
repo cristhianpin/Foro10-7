@@ -64,7 +64,7 @@ namespace ConsoleApp1.Repositories
             Console.WriteLine("Metodo modificar estudiante");
             using (SchoolContext context = new SchoolContext())
             {
-                Student std = await context.Students.FindAsync(11);
+                Student std = await context.Students.FindAsync(3);
 
                 std.Name = "Bill Gates";
                 await context.SaveChangesAsync();
@@ -77,7 +77,7 @@ namespace ConsoleApp1.Repositories
             Console.WriteLine("Metodo eliminar estudiante");
             using (SchoolContext context = new SchoolContext())
             {
-                Student std = await context.Students.FindAsync(11);
+                Student std = await context.Students.FindAsync(2);
                 context.Students.Remove(std);
                 await context.SaveChangesAsync();
                 Console.WriteLine("Codigo: " + std.StudentId + " Nombre: " + std.Name);
